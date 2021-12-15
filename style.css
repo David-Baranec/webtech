@@ -1,0 +1,273 @@
+h1, h2, h3{
+  text-align: center;
+  color: black;
+}
+h1{
+  font: size 25pt;;
+}
+#images{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px;
+}
+label, input{
+  border-radius: 4px;
+  padding: 10px;
+}
+label{
+  color: black;
+  font-size: larger;
+}
+#images a{
+  text-align: center;
+  border-radius: 4px;
+  transition: 0.3s;
+  
+}
+body{
+  background-color: rgb(170, 206, 238);
+}
+
+#images img{
+  border-radius: 4px; 
+  padding: 4px;
+}
+
+#images a:hover{
+  transform: scale(1.1);
+}
+
+#backdrop{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  overflow-y: hidden; 
+  overflow-x: hidden;  
+  z-index: 0;     
+}
+
+#modal{
+  display: flex;
+  position: relative;
+  min-width: 830px;
+  min-height: 200px; 
+  max-width: 90%;  
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;  
+  z-index: 1;
+  
+}
+
+#modal img{
+  display: block;
+  max-width: 100%;
+  min-height: 200px;
+  border-radius: 10px;
+  padding: 4px;
+}
+#modal span{
+  font-size: 0.8em;
+  font-weight: bold;
+  min-width: 150px;
+  color:#383838;
+  
+}
+.modalBtn{
+  cursor: pointer;
+  background-color: transparent;
+  border-style: none;
+}
+
+
+.closeBtn:hover{    
+  background-color: red;
+  color: white;
+  transform: scale(1.2);
+  border-radius: 13px;
+}
+
+/* my*/
+.prev,
+.next {
+  cursor: pointer;
+  position:relative;
+  width: auto;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  align-self: center;
+  background-color: transparent;
+  border-style: none;
+}
+.prev:hover,
+.next:hover, 
+.modalBtn:hover {
+  background-color: rgba(133, 126, 126, 0.8);
+}
+.closeBtn{
+  cursor: pointer;
+  background-color: transparent;
+  border-style: none;
+  align-self: flex-start;  
+}
+
+input label{
+position: fixed;
+text-align: left;
+padding: 12px;
+right: 0;
+top: 0;
+left: 0;
+margin-top: 0;
+}
+
+span{
+  padding: 15px;
+}
+.head{
+  display: grid;
+  align-self: normal;
+}
+
+
+footer{
+  text-align: center;
+  font-size: large;
+  color: black;
+}
+@media (min-width: 1000px){
+  #modal{
+    min-width: 820px;
+  }
+  #body{
+    min-width: 900px;
+  }
+}
+
+
+#container
+{
+   width: 410px;
+   height: 850px;
+   border:2px solid black;
+   border-radius: 20px;
+   margin:10px auto;
+   padding:10px;
+   position: relative;
+}
+#piecesContainer
+{
+   width: 408px;
+   height: 408px;
+   border:2px solid black;
+   
+   text-align: center;
+   font-size: 30px;
+   line-height: 400px;
+   position: relative;
+}
+
+#puzzleContainer
+{
+  margin-top: 10px;
+   width: 408px;
+   height: 408px;
+   border:2px solid black;
+   
+   
+}
+ul
+{
+   list-style-type: none;
+   margin: 20px;
+   text-align: center;
+}
+
+ul button
+{
+   width: 100px;
+   border:1px solid black;
+   font-size: 20px;
+   border-radius: 5px;
+   padding: 5px;
+}
+
+#btnReset
+{
+  display:none;
+}
+#btnReset:hover .tooltip{
+  display: block;
+  font-size: 14pt;
+}
+.piece 
+{
+   width:100px;
+   height:100px;
+   border: 1px solid black;
+   float:left;
+   background-image: url(flags.jpg);
+   background-repeat: no-repeat;
+}
+#first{
+  background-image: url(./images/flags.jpg);
+}
+#second 
+{
+  background-image: url(./images/pc.jpg);
+}
+#third
+{
+  background-image: url(./images/clock.jpg);
+}
+#four{
+  background-image: url(./images/love.jpg);
+}
+#fifth{
+  background-image: url(./images/number.jpg);
+}
+.pieceHolder
+{
+   width:100px;
+   height:100px;
+   border: 1px solid black;
+   float:left;
+   background-repeat: no-repeat;
+}
+.tooltip{
+  display: none;
+  min-width: 75px;   
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+text-align: center;
+border-radius: 6px;}
+
+
+@media (min-width:1000px){
+  #container
+  {
+   width: 850px;
+   height: 410px;
+  }
+  #piecesContainer
+  {
+  float: left;
+  }
+#puzzleContainer
+  {
+    float: right;
+    margin-top: 0px;
+  }
+}

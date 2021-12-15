@@ -1,0 +1,14 @@
+{
+    "name": "Webtech skuskove zadanie",
+    "short_name": "Webtech_final",
+    "start_url": ".",
+    "background_color": "#6dcdb1",
+    "theme_color": "#009578",
+    "display": "standalone",
+    "icons": [{
+        "src": "images/favicon.png",
+        "sizes": "738x727",
+        "type": "image/png"
+    }
+    ]
+}
