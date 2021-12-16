@@ -117,11 +117,11 @@
            console.log("K: " + k);
 
            if (k != order) {
-               $("#piecesContainer").text('Ouch! Try Again');
+               $("#piecesContainer").text('No no! Try Again');
                return false;
            }
        }
-       $("#piecesContainer").text("That\'s it! Well done!");
+       $("#piecesContainer").text(" Well done!");
        round+=3;
        localStorage.setItem('level', round);
        

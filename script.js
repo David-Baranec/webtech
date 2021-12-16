@@ -204,9 +204,63 @@ filter.addEventListener('input', (e) => {
   localStorage.setItem("filter", e.target.value)
   loadImages(e.target.value)
 })
+
+var stringArray=["923456781"];
+document.getElementById("exercise").value=stringArray[0];
+localStorage.setItem("level", 0);
+
+function loadNumber(){
+
+  fetch("./exercise.json")
+  .then(res => res.json())
+  .then(data => {
+    data.forEach(problem => {
+      if(localStorage.getItem("level")==0){
+        document.getElementById("exercise").value=stringArray[0];
+      }
+      if(localStorage.getItem("level")==(`${problem.id}`)){
+        document.getElementById("exercise").value=`${problem.work}`;
+      }
+      else{
+        console.log("not matched level ")
+      }
+    })
+
+  })
+
+}
+
 checkLocalStorage()
 loadImages(localStorage.getItem("filter"))
 
+
+function update() {
+  var solved = false;
+
+  var passed = 0;
+  for (var i = 0; i < imagesList.length; i++) {
+    if (document.getElementById("exercise").value.charAt(i) == `${imagesList[i].title}`) {
+    console.log("match");
+    console.log(document.getElementById("exercise").value.charAt(i));
+    console.log(`${imagesList[i].title}`);
+    passed++;
+    }
+  }
+  if (passed === imagesList.length) {
+    solved = true;
+    console.log("solved" + ' ..... ');
+    console.log(" ");
+    var level =localStorage.getItem("level");
+    level++;
+    level=level%4;
+    localStorage.setItem('level',level );
+    loadNumber();
+  }
+  else {
+    console.log("wrong order");
+  }
+
+}
 
 
 /////////////////////

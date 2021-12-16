@@ -6,10 +6,10 @@ h1{
   font: size 25pt;;
 }
 #images{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 20px;
+  
+  margin: 10px auto;
+  width: 630px;
+  text-align: center;
 }
 label, input{
   border-radius: 4px;
