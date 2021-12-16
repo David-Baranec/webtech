@@ -20,21 +20,37 @@
 
   <div id="wrapper">
     <h1>Games</h1>
+  
+    <div id="board2">
+      <h4>Number order game</h4>
+      <label>Zmyslom hry je preusporiadať čísla tak, aby sa poradie zľava do prava zhodovalo so zadaním.</label>
+      <input type="text" id="filter">
+      <div id="header">
+        <input type="text" id="exercise" placeholder="dont write here" disabled>
+        <button id="check" onclick="update();">Check</button>
+        <input type="text" id="result" placeholder="dont write here" disabled>
+      </div>
+      <div id="images"></div>
+    </div>
+    <div id="backdrop">
+      <div id="modal"></div>
+    </div>
     <div id="board">
       <h2>Puzzle Game</h2>
+      <label>Zmyslom hry je poskladať obrázkovú mozaiku.</label>
+      <div id="header2">
+        <input type="text" id="result2" placeholder="dont write here" disabled>
+      </div>
       <div id="container">
         <div id="piecesContainer"></div>
-        <!--end "piecesContainer"-->
         <div id="puzzleContainer"></div>
-        <!--end "puzzleContainer"-->
       </div>
-      <!--end "container"-->
       <h3>Dobre si pozrite obrázok, ak stlačíte tlačidlo Štart, nie je možné vrátiť sa späť beztrestne!</h3>
-      
+
       <ul id="buttons">
         <li>
-          <button id="skip">Skip</button>
-        </li>
+          <button id="next">Next</button>
+        </li> 
         <li>
           <button id="btnStart">Start</button>
         </li>
@@ -46,22 +62,8 @@
 
       </ul>
     </div>
-    <label for="filter">Filter:</label><br>
-    <input type="text" id="filter">
-    <input type="text" id="exercise" placeholder="dont write here" disabled>
-    <button id="check" onclick="update();">Check</button>
-   
-
-    <div id="images"></div>
-
   </div>
 
-
-
-  <div id="backdrop">
-    <div id="modal"></div>
-
-  </div>
   <script src="./script2.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
   <script src="./script.js"></script>

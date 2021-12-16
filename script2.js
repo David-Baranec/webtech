@@ -1,11 +1,11 @@
 
 //$(document).ready(function () {
-    if(localStorage.getItem('level')==undefined){
+    if(localStorage.getItem('puzzleLevel')==undefined){
         var round=0;
-        localStorage.setItem('level', round);
+        localStorage.setItem('puzzleLevel', round);
    }
    else{
-       var round=parseInt(localStorage.getItem('level'));
+       var round=parseInt(localStorage.getItem('puzzleLevel'));
    }
    
    pieces = createPieces(true);
@@ -37,7 +37,7 @@
        $("#btnReset").show()
        implementLogic()
    }); // end  $("btnStart").click(function()
-   $("#skip").click(function () {
+   $("#next").click(function () {
        round+=1;
        localStorage.setItem('level', round);
        console.log(round)
@@ -45,13 +45,11 @@
        var newPieces = createPieces(true);
        $("#puzzleContainer").html(newPieces);
        $("#piecesContainer").html("");
-       //$(this).hide();
-       //$("#btnStart").show();
-   }); // end $("#btnReset").click(function()
+      }); 
    $("#btnReset").click(function () {
        if(round>0)
            round-=1;
-       localStorage.setItem('level', round);
+       localStorage.setItem('puzzleLevel', round);
        var newPieces = createPieces(true);
        $("#puzzleContainer").html(newPieces);
        $("#piecesContainer").html("");
@@ -99,6 +97,7 @@
            } // end walk grid (i,j) for image pieces
                
        console.log(round)
+       document.getElementById("result2").value=round+"/5";
        return pieces;
    } // end createPieces(withImage)
 
@@ -122,8 +121,8 @@
            }
        }
        $("#piecesContainer").text(" Well done!");
-       round+=3;
-       localStorage.setItem('level', round);
+       round+=2;
+       localStorage.setItem('puzzleLevel', round);
        
 
    } // end checkIfPuzzleSolved()

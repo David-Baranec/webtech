@@ -26,90 +26,6 @@ const imageModal = document.createElement('img')
 const backdrop = document.getElementById('backdrop')
 
 
-const openModal = (e, curentImg, imagesList) => {
-  modal.innerHTML = ''
-  const imageModal = document.createElement('img')
-  const closeBtn = document.createElement('button')
-  const prevBtn = document.createElement('a')
-  const nextBtn = document.createElement('a')
-  const title = document.createElement('span')
-  const pauseBtn = document.createElement('button')
-  const head = document.createElement('div')
-  let imageId = findImageIndex(imagesList, curentImg)
-  var show = false;
-  head.className = 'head'
-  pauseBtn.className = "modalBtn"
-  pauseBtn.innerHTML = `play`
-  closeBtn.className="closeBtn"
-  closeBtn.innerHTML="     X"
-  prevBtn.className = "prev"
-  prevBtn.innerHTML='<'
-  nextBtn.className = "next"
-  nextBtn.innerHTML='>'
-  backdrop.style.display = "grid"
-  imageModal.src = e.target.src
-  title.innerHTML = titleText(imagesList[imageId].title, imagesList[imageId].description, imageId, imagesList)
- 
-  var timer;
-
-  pauseBtn.addEventListener('click', ()=>{
-    if(show == false){
-       timer = setInterval(() => {
-        if ((imageId) >= imagesList.length-1)
-          imageId = -1
-        imageId++
-        imageModal.src = `./images/${imagesList[imageId].filename}`
-        title.innerHTML = titleText(imagesList[imageId].title, imagesList[imageId].description, imageId, imagesList)
-      }, 2000);
-      show=true;
-      pauseBtn.innerHTML='pause'
-      console.log('slideshow started')
-    }
-    else{
-      clearInterval(timer)
-      console.log(timer)
-      show=false;
-      pauseBtn.innerHTML='play'
-      console.log('slideshow stopped')
-    }
-  })
-
-  closeBtn.addEventListener('click', () =>{
-    
-      backdrop.style.display = "none"
-  })
-  prevBtn.addEventListener('click', () => {
-    if ((imageId) <= 0){
-      return
-    }
-    imageId--
-    imageModal.src = `./images/${imagesList[imageId].filename}`
-    title.innerHTML = titleText(imagesList[imageId].title, imagesList[imageId].description, imageId, imagesList)
-  })
-
-  nextBtn.addEventListener('click', () => {
-    if ((imageId) >= imagesList.length -1 ){
-      return
-    }
-    imageId++
-    imageModal.src = `./images/${imagesList[imageId].filename}`
-    title.innerHTML = titleText(imagesList[imageId].title, imagesList[imageId].description, imageId, imagesList)
-  })
-
-  modal.appendChild(prevBtn)
-  modal.appendChild(imageModal)
-  modal.appendChild(nextBtn)
-  head.appendChild(pauseBtn)
-  head.appendChild(title)
-  modal.appendChild(head)
-  modal.appendChild(closeBtn)
-
-  //////
-  //////
-
-  //////
-  //////
-}
 const imagesSection = document.getElementById('images')
 const filter = document.getElementById('filter')
 
@@ -207,10 +123,11 @@ filter.addEventListener('input', (e) => {
 
 var stringArray=["923456781"];
 document.getElementById("exercise").value=stringArray[0];
-localStorage.setItem("level", 0);
-
+if (localStorage.getItem('level')==undefined){
+  localStorage.setItem("level", 0);
+}
+document.getElementById("result").value=localStorage.getItem('level')+"/12";
 function loadNumber(){
-
   fetch("./exercise.json")
   .then(res => res.json())
   .then(data => {
@@ -229,7 +146,6 @@ function loadNumber(){
   })
 
 }
-
 checkLocalStorage()
 loadImages(localStorage.getItem("filter"))
 
@@ -252,8 +168,9 @@ function update() {
     console.log(" ");
     var level =localStorage.getItem("level");
     level++;
-    level=level%4;
+    level=level%12;
     localStorage.setItem('level',level );
+    document.getElementById("result").value=localStorage.getItem('level')+"/12";
     loadNumber();
   }
   else {
