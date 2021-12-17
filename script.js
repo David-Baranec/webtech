@@ -87,8 +87,8 @@ const createGallery = (image, filterString) => {
     //img.width = 240
    // img.height = 120
 //  }
-  img.width=200
-  img.height=200
+  //img.width=200
+  //img.height=200
   img.alt="picture";
   //img.style = "object-fit:cover"
   img.addEventListener('dragover', e => dragOver(e))
@@ -122,7 +122,7 @@ filter.addEventListener('input', (e) => {
 })
 
 var stringArray=["923456781"];
-document.getElementById("exercise").value=stringArray[0];
+//document.getElementById("exercise").value=stringArray[0];
 if (localStorage.getItem('level')==undefined){
   localStorage.setItem("level", 0);
 }
@@ -148,7 +148,7 @@ function loadNumber(){
 }
 checkLocalStorage()
 loadImages(localStorage.getItem("filter"))
-
+loadNumber();
 
 function update() {
   var solved = false;

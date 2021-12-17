@@ -30,11 +30,14 @@ label{
 }
 body{
   background-color: rgb(170, 206, 238);
+  display: flex;
 }
 
 #images img{
   border-radius: 4px; 
   padding: 4px;
+  width: 150px;
+  height: 150px;
 }
 
 #images a:hover{
@@ -141,6 +144,9 @@ label{
 }
 span{
   padding: 15px;
+  text-align: center;
+  font-size: large;
+  color: black;
 }
 .head{
   display: grid;
@@ -159,6 +165,10 @@ footer{
   }
   #body{
     min-width: 900px;
+  }
+  #images img{
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -200,7 +210,7 @@ footer{
   margin-top: 10px;
    width: 408px;
    height: 408px;
-   border:2px solid black;
+   border:3px solid black;
    
    
 }

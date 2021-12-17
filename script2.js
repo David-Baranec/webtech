@@ -39,12 +39,14 @@
    }); // end  $("btnStart").click(function()
    $("#next").click(function () {
        round+=1;
-       localStorage.setItem('level', round);
+       localStorage.setItem('puzzleLevel', round);
        console.log(round)
        round=(round%5);
        var newPieces = createPieces(true);
        $("#puzzleContainer").html(newPieces);
        $("#piecesContainer").html("");
+       $("#btnReset").hide();
+       $("#btnStart").show();
       }); 
    $("#btnReset").click(function () {
        if(round>0)
@@ -97,7 +99,7 @@
            } // end walk grid (i,j) for image pieces
                
        console.log(round)
-       document.getElementById("result2").value=round+"/5";
+       document.getElementById("result2").value=(round+1)+"/5";
        return pieces;
    } // end createPieces(withImage)
 
@@ -121,7 +123,7 @@
            }
        }
        $("#piecesContainer").text(" Well done!");
-       round+=2;
+       round+=1;
        localStorage.setItem('puzzleLevel', round);
        
 
