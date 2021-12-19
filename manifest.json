@@ -1,13 +1,13 @@
 {
-    "name": "Webtech skuskove zadanie",
-    "short_name": "Webtech_final",
+    "name": "Drag and Drop Boardgame",
+    "short_name": "D&D Boardgame",
     "start_url": ".",
     "background_color": "#6dcdb1",
     "theme_color": "#009578",
     "display": "standalone",
     "icons": [{
         "src": "images/favicon.png",
-        "sizes": "738x727",
+        "sizes": "512x512",
         "type": "image/png"
     }
     ]

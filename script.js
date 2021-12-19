@@ -42,6 +42,36 @@ const checkLocalStorage = () => {
   filter.value = ""
 }
 
+const touchMove = (e) => (target = e.target)
+
+const touchEnd = (e) => {
+  let temp = e.target.src
+  e.target.src = target.src
+  target.src = temp
+
+  let url = e.target.baseURI
+  url = url.replace('index.html', '')
+
+  let filename1 = temp.replace(`${url}images/`, '')
+  let element1 = imagesList.find(item => item.filename === filename1)
+
+  let filename2 = e.target.src.replace(`${url}images/`, '')
+  let element2 = imagesList.find(item => item.filename === filename2)
+
+  let img1 = findImageIndex(imagesList, element1)
+  let img2 = findImageIndex(imagesList, element2)
+
+
+  let tempImg = imagesList[img1]
+  imagesList[img1] = imagesList[img2]
+  imagesList[img2] = tempImg
+
+  if (localStorage.getItem("filter") != "")
+    return
+  localStorage.setItem('imagesList', JSON.stringify(imagesList))
+  loadImages(localStorage.getItem("filter"))
+}
+////////////
 const dragOver = (e) => (target = e.target)
 
 const dragStop = (e) => {
@@ -93,6 +123,8 @@ const createGallery = (image, filterString) => {
   //img.style = "object-fit:cover"
   img.addEventListener('dragover', e => dragOver(e))
   img.addEventListener('dragend', (e) => dragStop(e))
+  img.addEventListener('touchmove', e => touchMove(e));
+  img.addEventListener('touchend', (e)=> touchEnd(e));
 
   //img.addEventListener('click', (e) => openModal(e, image, imagesList))
   imagesSection.appendChild(img)
@@ -170,7 +202,7 @@ function update() {
     level++;
     level=level%12;
     localStorage.setItem('level',level );
-    document.getElementById("result").value=localStorage.getItem('level')+"/12";
+    document.getElementById("result").value=(localStorage.getItem('level')+1)+"/12";
     loadNumber();
   }
   else {
