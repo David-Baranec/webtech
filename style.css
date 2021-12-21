@@ -108,86 +108,14 @@ body{
 p{
   font-size: 25px;
 }
-.closeBtn:hover{    
-  background-color: red;
-  color: white;
-  transform: scale(1.2);
-  border-radius: 13px;
-}
 
-/* my*/
-.prev,
-.next {
-  cursor: pointer;
-  position:relative;
-  width: auto;
-  padding: 16px;
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-  align-self: center;
-  background-color: transparent;
-  border-style: none;
-}
-.prev:hover,
-.next:hover, 
-.modalBtn:hover {
-  background-color: rgba(133, 126, 126, 0.8);
-}
-.closeBtn{
-  cursor: pointer;
-  background-color: transparent;
-  border-style: none;
-  align-self: flex-start;  
-}
-
-input label{
-position: fixed;
-text-align: left;
-padding: 12px;
-right: 0;
-top: 0;
-left: 0;
-margin-top: 0;
-}
 label{
   display: block;
   margin: 3px auto;
   text-align: center;
 }
-span{
-  padding: 15px;
-  text-align: center;
-  font-size: large;
-  color: black;
-}
-.head{
-  display: grid;
-  align-self: normal;
-}
 
 
-footer{
-  text-align: center;
-  font-size: large;
-  color: black;
-}
-
-
-
-#container
-{
-   width: 410px;
-   height: 850px;
-   border:2px solid black;
-   border-radius: 20px;
-   margin:10px auto;
-   padding:10px;
-   position: relative;
-}
 #header, #header2{
   position: relative;
   margin: 1px auto;
@@ -197,33 +125,7 @@ footer{
 #filter{
   display: none;
 }
-#piecesContainer
-{
-   width: 408px;
-   height: 408px;
-   border:2px solid black;
-   
-   text-align: center;
-   font-size: 30px;
-   line-height: 400px;
-   position: relative;
-}
 
-#puzzleContainer
-{
-  margin-top: 10px;
-   width: 408px;
-   height: 408px;
-   border:3px solid black;
-   
-   
-}
-ul
-{
-   list-style-type: none;
-   margin: 20px;
-   text-align: center;
-}
 
 ul button, #check
 {
@@ -243,23 +145,6 @@ ul button, #check
   display: block;
   align-self: center;
 }
-#btnReset
-{
-  display:none;
-}
-#btnReset:hover .tooltip{
-  display: block;
-  font-size: 14pt;
-}
-
-.tooltip{
-  display: none;
-  min-width: 75px;   
-  margin-left: auto;
-  margin-right: auto;
-  color: red;
-text-align: center;
-border-radius: 6px;}
 
 #solved{
   margin: auto;
@@ -286,6 +171,9 @@ border-radius: 6px;}
   #help_written{
     width: 700px;
   }
+  #input{
+    font-size: 28px;
+  }
 }
 @media (min-width: 1200px){
   #modal{
@@ -302,6 +190,9 @@ border-radius: 6px;}
     text-align: center;
     width: 250px;
     font-size: x-large;
+  }
+  #input{
+    font-size: 30px;
   }
   #images{
   
@@ -328,6 +219,9 @@ border-radius: 6px;}
     text-align: center;
     width: 350px;
     font-size: x-large;
+  }
+  #input{
+    font-size: 25px;
   }
   #images{
   
