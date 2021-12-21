@@ -202,7 +202,7 @@ function update() {
     level++;
     level=level%12;
     localStorage.setItem('level',level );
-    document.getElementById("result").value=(localStorage.getItem('level')+1)+"/12";
+    document.getElementById("result").value=(localStorage.getItem('level')+"/12");
     loadNumber();
   }
   else {
@@ -213,3 +213,12 @@ function update() {
 
 
 /////////////////////
+
+function displayHelp(){
+  var c=document.getElementById("help_written");
+  c.style.display="block";
+}
+function hideHelp(){
+  var c=document.getElementById("help_written");
+  c.style.display="none";
+}

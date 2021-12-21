@@ -91,7 +91,23 @@ body{
   border-style: none;
 }
 
-
+#input{
+  font-size: 25px;
+}
+#help{
+  margin: auto;
+  
+}
+#help_written{
+  display: none;
+  width: 600px;
+  margin: auto;
+  border-radius: 20px;
+  border: 3px;
+}
+p{
+  font-size: 25px;
+}
 .closeBtn:hover{    
   background-color: red;
   color: white;
@@ -159,18 +175,7 @@ footer{
   font-size: large;
   color: black;
 }
-@media (min-width: 1000px){
-  #modal{
-    min-width: 820px;
-  }
-  #body{
-    min-width: 900px;
-  }
-  #images img{
-    width: 200px;
-    height: 200px;
-  }
-}
+
 
 
 #container
@@ -185,8 +190,7 @@ footer{
 }
 #header, #header2{
   position: relative;
-  padding: 10px;
-  margin: 10px auto;
+  margin: 1px auto;
   display: table;
 }
 
@@ -232,7 +236,8 @@ ul button, #check
 }
 #exercise, #result, #result2{
   text-align: center;
-  width: 100px;
+  width: 150px;
+  font-size: x-large;
 }
 #result2{
   display: block;
@@ -246,40 +251,7 @@ ul button, #check
   display: block;
   font-size: 14pt;
 }
-.piece 
-{
-   width:100px;
-   height:100px;
-   border: 1px solid black;
-   float:left;
-   background-image: url(flags.jpg);
-   background-repeat: no-repeat;
-}
-#first{
-  background-image: url(./images/flags.jpg);
-}
-#second 
-{
-  background-image: url(./images/pc.jpg);
-}
-#third
-{
-  background-image: url(./images/clock.jpg);
-}
-#four{
-  background-image: url(./images/love.jpg);
-}
-#fifth{
-  background-image: url(./images/number.jpg);
-}
-.pieceHolder
-{
-   width:100px;
-   height:100px;
-   border: 1px solid black;
-   float:left;
-   background-repeat: no-repeat;
-}
+
 .tooltip{
   display: none;
   min-width: 75px;   
@@ -289,20 +261,84 @@ ul button, #check
 text-align: center;
 border-radius: 6px;}
 
+#solved{
+  margin: auto;
+  display: flex;
+}
 
-@media (min-width:1000px){
-  #container
-  {
-   width: 850px;
-   height: 410px;
+
+@media (min-width: 1000px){
+  #modal{
+    min-width: 820px;
   }
-  #piecesContainer
-  {
-  float: left;
+  #body{
+    min-width: 900px;
   }
-#puzzleContainer
-  {
-    float: right;
-    margin-top: 0px;
+  #images img{
+    width: 200px;
+    height: 200px;
   }
+  #exercise, #result, #result2{
+    text-align: center;
+    width: 200px;
+    font-size: x-large;
+  }
+  #help_written{
+    width: 700px;
+  }
+}
+@media (min-width: 1200px){
+  #modal{
+    min-width: 100px;
+  }
+  #body{
+    min-width: 1100px;
+  }
+  #images img{
+    width: 250px;
+    height: 250px;
+  }
+  #exercise, #result, #result2{
+    text-align: center;
+    width: 250px;
+    font-size: x-large;
+  }
+  #images{
+  
+    margin: 10px auto;
+    width: 1030px;
+    text-align: center;
+  }
+  #help_written{
+    width: 900px;
+  }
+}
+@media (min-width: 1500px){
+  #modal{
+    min-width: 1320px;
+  }
+  #body{
+    min-width: 1400px;
+  }
+  #images img{
+    width: 300px;
+    height: 300px;
+  }
+  #exercise, #result, #result2{
+    text-align: center;
+    width: 350px;
+    font-size: x-large;
+  }
+  #images{
+  
+    margin: 10px auto;
+    width: 1230px;
+    text-align: center;
+  }
+  #help_written{
+    width: 1300px;
+  }
+}
+#wrapper{
+  margin: auto;
 }

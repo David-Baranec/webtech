@@ -5,7 +5,8 @@
   <title>Superhry</title>
   <meta charset="UTF-8">
   <link rel="icon" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" media="all">
+  <link rel="stylesheet" href="printStyle.css" media="print">
   <meta name="theme-color" content="#009578">
   <meta name="viewport" content="width=device-width">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -23,15 +24,29 @@
   
     <div id="board2">
       
-      <label>Zmyslom hry je preusporiadať čísla tak, aby sa poradie zľava do prava zhodovalo so zadaním.</label>
+      
       <input type="text" id="filter">
+      <label>Zmyslom hry je preusporiadať čísla tak, ako je zadané v okienku pri tlačidle Check</label>
       <div id="header">
         <input type="text" id="exercise" placeholder="dont write here" disabled>
         <button id="check" onclick="update();">Check</button>
+      
         <input type="text" id="result" placeholder="dont write here" disabled>
+      </div>
+      <div id="header2">
+        <input type="image" id="help" src="./images/how.png"  height="50" width="50"  onmouseover="displayHelp();" onmouseleave="hideHelp();"  >
+      </div>
+      <div id="help_written">
+        
+        <p>
+          Pri hre na dotykovom displeji nezabudni po potiahnutí obrázku potvrdiť jeho pozíciu kliknutím na miesto, kde chcete obrázok umiestniť.
+          
+        </p> 
+        <img  id="solved" src="./images/solution.png" alt="photography" height="250" width="250">
       </div>
       <div id="images"></div>
     </div>
+   
     <div id="backdrop">
       <div id="modal"></div>
     </div>

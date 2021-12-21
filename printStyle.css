@@ -1,0 +1,129 @@
+h1, h2, h3, h4{
+    text-align: center;
+    color: black;
+  }
+  h1{
+    font: size 30pt;;
+  }
+ 
+  body{
+    background-color: rgb(170, 206, 238);
+    display: flex;
+  }
+  
+  #help_written{
+      display: block;
+    width: 600px;
+    margin: auto;
+    border-radius: 20px;
+    border: 3px;
+  }
+  p{
+    font-size: 25px;
+  }
+  
+  label{
+    display: block;
+    margin: 3px auto;
+    text-align: center;
+  }
+  #solved{
+      display: block;
+  }
+  #header, #header2{
+    position: relative;
+    margin: 1px auto;
+    display: table;
+  }
+  
+  #filter{
+    display: none;
+  }
+  
+ 
+ 
+  #exercise, #result, #result2, #check, #images, #help{
+      display: none;
+
+  }
+  
+ 
+ 
+  
+  
+  
+  @media (min-width: 1000px){
+    #modal{
+      min-width: 820px;
+    }
+    #body{
+      min-width: 900px;
+    }
+    #images img{
+      width: 200px;
+      height: 200px;
+    }
+    #exercise, #result, #result2{
+      text-align: center;
+      width: 200px;
+      font-size: x-large;
+    }
+    #help_written{
+      width: 700px;
+    }
+  }
+  @media (min-width: 1200px){
+    #modal{
+      min-width: 100px;
+    }
+    #body{
+      min-width: 1100px;
+    }
+    #images img{
+      width: 250px;
+      height: 250px;
+    }
+    #exercise, #result, #result2{
+      text-align: center;
+      width: 250px;
+      font-size: x-large;
+    }
+    #images{
+    
+      margin: 10px auto;
+      width: 1030px;
+      text-align: center;
+    }
+    #help_written{
+      width: 900px;
+    }
+  }
+  @media (min-width: 1500px){
+    #modal{
+      min-width: 1320px;
+    }
+    #body{
+      min-width: 1400px;
+    }
+    #images img{
+      width: 300px;
+      height: 300px;
+    }
+    #exercise, #result, #result2{
+      text-align: center;
+      width: 350px;
+      font-size: x-large;
+    }
+    #images{
+    
+      margin: 10px auto;
+      width: 1230px;
+      text-align: center;
+    }
+    #help_written{
+      width: 1300px;
+    }
+  }
+  #wrapper{
+    margin: auto;
+  }
