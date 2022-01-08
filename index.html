@@ -26,7 +26,8 @@
       
       
       <input type="text" id="filter">
-      <label>Zmyslom hry je preusporiadať čísla tak, ako je zadané v okienku pri tlačidle Check</label>
+      <label>Táto hra je postavená na princípe "potiahni a pusti". Teda je potrebné označiť číslo a potiahnuť ho na správnu pozíciu.
+         Zmyslom hry je preusporiadať čísla tak, ako je zadané v okienku pri tlačidle Check. V prípade, že vaše poradie je správne, posuniete sa na ďalšiu úroveň.</label>
       <div id="header">
         <input type="text" id="exercise" placeholder="dont write here" disabled>
         <button id="check" onclick="update();">Check</button>
@@ -34,12 +35,13 @@
         <input type="text" id="result" placeholder="dont write here" disabled>
       </div>
       <div id="header2">
-        <input type="image" id="help" src="./images/how.png"  height="50" width="50"  onmouseover="displayHelp();" onmouseleave="hideHelp();"  >
+        <input type="image" alt="help picture" id="help" src="./images/how.png"  height="50" width="50"  onmouseover="displayHelp();" onmouseleave="hideHelp();"  >
       </div>
       <div id="help_written">
         
         <p>
           Pri hre na dotykovom displeji nezabudni po potiahnutí obrázku potvrdiť jeho pozíciu kliknutím na miesto, kde chcete obrázok umiestniť.
+        </br> Príklad správne uloženého poradia.
           
         </p> 
         <img  id="solved" src="./images/solution.png" alt="photography" height="250" width="250">
